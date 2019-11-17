@@ -1,0 +1,4 @@
+ScriptName,TransactionID,TransactionName,StartTime,EndTime,PerformanceSeconds,ErrorDescription
+My_Application,0,My_Application_LAUNCH_TO_CLOSE,17/11/2019 7:21:00 PM,17/11/2019 7:21:24 PM,23.20,
+My_Application,1,01_Step1,17/11/2019 7:21:01 PM,17/11/2019 7:21:03 PM,2.20,
+My_Application,2,02_Step2,17/11/2019 7:21:04 PM,17/11/2019 7:21:24 PM,20.00,

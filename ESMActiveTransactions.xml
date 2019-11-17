@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CVBulkInsert>
+    <CVVersion>12.5</CVVersion>
+    <TPQALCollection>
+        <ApplicationName>My Application</ApplicationName>
+        <TransactionName>My_Application_Launch_To_Close</TransactionName>
+        <ScriptName>My_Application</ScriptName>
+        <Availability>90</Availability>
+        <ScheduleId>1</ScheduleId>
+        <Enabled>True</Enabled>
+    </TPQALCollection>
+    <TPQALCollection>
+        <ApplicationName>My Application</ApplicationName>
+        <TransactionName>01_Step1</TransactionName>
+        <ScriptName>My_Application</ScriptName>
+        <Availability>30</Availability>
+        <ScheduleId>1</ScheduleId>
+        <Enabled>True</Enabled>
+    </TPQALCollection>
+    <TPQALCollection>
+        <ApplicationName>My Application</ApplicationName>
+        <TransactionName>02_Step2</TransactionName>
+        <ScriptName>My_Application</ScriptName>
+        <Availability>30</Availability>
+        <ScheduleId>1</ScheduleId>
+        <Enabled>True</Enabled>
+    </TPQALCollection>
+</CVBulkInsert>
