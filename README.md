@@ -19,8 +19,8 @@ On the Enterprise Synthetic Agent, the PowerShell script and related files shoul
 2. Create a new API token, and grant it the '*Create and read synthetic monitors, locations, and nodes*' permission
 3. Copy and paste the new API token into the `ExportToDynatrace.ps1` script as the `$DynatraceAPIToken` variable
 4. Also copy and paste the Dynatrace tenant URL as the ```$DynatraceTenant``` variable
-  # `https://*tenantid*.live.dynatrace.com` for Dynatrace SaaS
-  # `https://dynatracemanagedurl/e/*environment_id*` for Dynatrace Managed
+  * `https://*tenantid*.live.dynatrace.com` for Dynatrace SaaS
+  * `https://dynatracemanagedurl/e/*environment_id*` for Dynatrace Managed
 
 ### Enabling TestParter to call the PowerShell script
 1. Open the Agent Recorder, and open the Asset Browser (View -> Asset Browser).
