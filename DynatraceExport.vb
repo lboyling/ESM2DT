@@ -6,7 +6,7 @@ Option Explicit
 '   2. Open the CVFW_User_Modifiable_Functions, and add the following line at the end 
 '      of both the UserEndOfAppDriver() and UserOnAppError() Subs:
 '
-'            DynatraceExport.SendToDynatrace
+'            DynatraceExport.ExportToDynatrace
 '
 
 'Location where the all the files for the DT Integration are stored - by default, all files

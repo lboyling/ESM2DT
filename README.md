@@ -28,7 +28,7 @@ On the Enterprise Synthetic Agent, the PowerShell script and related files shoul
 3. Add the following line at the end 
       of both the `UserEndOfAppDriver()` and `UserOnAppError()` Subs:
 ```vb
-            DynatraceExport.SendToDynatrace
+            DynatraceExport.ExportToDynatrace
 ```
 4. Back in the Asset Browser, go to the Shared Module tab, and create a new Shared Module. Save it as DynatraceExport, in the Common project. 
 5. Copy the entire contents of `DynatraceExport.vb` into the `DynatraceExport` shared module and save it.
