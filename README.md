@@ -7,7 +7,7 @@ Features:
 * Integration of Enterprise Synthetic data with native Dynatrace Synthetic monitoring (HTTP, browser monitors and browser clickpaths)
 * Optional generation of testOutage events - Dynatrace will generate problems based on these events
 * A drilldown link to a Dynatrace NAM report, allowing users to view screenshots for failed transactions
-![Enterprise Synthetic results appearing in Dynatrace, including resolved problems, maintenance windows, and error messages](/images/demo_problems_and_maintenance.jpg)
+![Enterprise Synthetic results appearing in Dynatrace, including resolved problems, maintenance windows, and error messages](/images/demo_main.png)
 
 ## Setup and prerequisites
 
