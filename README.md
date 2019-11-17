@@ -66,6 +66,31 @@ $ScheduleID = @(-1
 )
 ```
 
+## Configurable options
+### Controlling Dynatrace problem generation
+The PowerShell script has a configurable option ($GenerateDtProblems) for whether to generate Dynatrace problems in the event of a transaction failing to complete. You may not want to have Dynatrace generate problems to start with - set $GenerateDtProblems to $false to prevent problem generation.
+
+### Dynatrace NAM integration
+To provide additional details, Dynatrace can provide a 'View details' button which will open a Dynatrace NAM report. For example, the Enterprise Synthetic - Transactions list DMI report shows the screenshots for failed transactions. To configure, edit the $DynatraceNAMUrl variable to link to the Dynatrace NAM DMI report. The Application name will automatically be appended to the URL. Application names with special characters (such as square brackets) should work as well.
+
+### Custom icon
+Dynatrace shows a default external synthetic icon in the Synthetic views. By editing the $syntheticEngineIconUrl variable, you can provide a URL link to a custom icon, which Dynatrace will display for all synthetic tests that use the same synthetic engine (i.e. Enterprise Synthetic). Be aware that Dynatrace *must be able to access this icon URL without needing to authenticate*.
+ 
+## Sample files
+There are a few sample files that can be used to test the process for a sample "My_Application" Active test. This test has the following 3 transactions:
+* My_Application_Launch_To_Close: Results for the overall test run - defined so because the transaction name ends with "Launch_To_Close" (case insensitive)
+* 01_Step01: The first step
+* 02_Step02: The second step
+
+The 3 sample files are:
+* ESMActiveTransactions.xml: Contains a slimmed down version of the Enterprise Synthetic defintions for a single "My_Application" script. Only the required XML tags for each transaction are included (6 of the 30-40 elements are present for each transaction).
+* results_success.csv: Contains results for the "My_Application script, completing a single successful synthetic run.
+* results_failed.csv: Contains results for the "My_Application script, failing on the second step (wtih an error message of "Step 2 error").
+
+Dynatrace will only accept results where **all the timestamps are within the past 2 hours**. So to use these results in testing, you'll need to edit both the start time and end time for all the transactions. The start and end times use the local time on the ESM Agent (the script will convert the results to UTC time automatically). 
+
+To make a transaction failed, set the end time field to "12:00:00 AM" - this magic time indicates that the transaction didn't end (because of a failure). Also set the error message at the end to something that isn't blank.
+
 ## Script process
 * The Enterprise Synthetic Agent does the processing of the results and makes the API calls directly to Dynatrace (bypassing the Agent Manager and NAM entirely):
 * In the TestPartner database, a call to a new shared module is placed into the CVFW_User_Modifiable_Functions Module in two places: UserEndOfAppDriver (for successful runs), and UserOnAppError (for failed runs).
