@@ -7,7 +7,6 @@ Features:
 * Integration of Enterprise Synthetic data with native Dynatrace Synthetic monitoring (HTTP, browser monitors and browser clickpaths)
 * Optional generation of testOutage events - Dynatrace will generate problems based on these events
 * A drilldown link to a Dynatrace NAM report, allowing users to view screenshots for failed transactions
-
 ![Enterprise Synthetic results appearing in Dynatrace, including resolved problems, maintenance windows, and error messages](/images/demo_problems_and_maintenance.jpg)
 
 ## Setup and prerequisites
@@ -18,14 +17,14 @@ On the Enterprise Synthetic Agent, the PowerShell script and related files shoul
 ### Generating the Dynatrace API Token
 1. In Dynatrace, select Settings -> Integration -> Dynatrace API.
 2. Create a new API token, and grant it the '*Create and read synthetic monitors, locations, and nodes*' permission
-3. Copy and paste the new API token into the `ExportToDynatrace.ps1` script as the $DynatraceAPIToken variable
+3. Copy and paste the new API token into the `ExportToDynatrace.ps1` script as the `$DynatraceAPIToken` variable
 4. Also copy and paste the Dynatrace tenant URL as the ```$DynatraceTenant``` variable
-## https://*tenantid*.live.dynatrace.com for Dynatrace SaaS
-## https://dynatracemanagedurl/e/*environment_id* for Dynatrace Managed
+  # `https://*tenantid*.live.dynatrace.com` for Dynatrace SaaS
+  # `https://dynatracemanagedurl/e/*environment_id*` for Dynatrace Managed
 
 ### Enabling TestParter to call the PowerShell script
 1. Open the Agent Recorder, and open the Asset Browser (View -> Asset Browser).
-2. Select the Module type, and open the ``CVFW_Modifiable_Functions` module
+2. Select the Module type, and open the `CVFW_Modifiable_Functions` module
 3. Add the following line at the end 
       of both the `UserEndOfAppDriver()` and `UserOnAppError()` Subs:
 ```vb
@@ -39,7 +38,7 @@ On the Enterprise Synthetic Agent, the PowerShell script and related files shoul
 1. Open the Enterprise Synthetic Agent Manager and connect to the ESM Console
 2. Select the File menu, and select Export Data.
 3. In the Monitoring type dropdown, select Active.
-4. Select the Browse button, and set the save location as "`{UserProfile}\Documents\DTIntegration\ESMActiveTransactions.xml`" 
+4. Select the Browse button, and set the save location as `{UserProfile}\Documents\DTIntegration\ESMActiveTransactions.xml`
 5. Click Preview, and then click Export to save the XML to the script folder.
 
 ### Adding custom schedule intervals
